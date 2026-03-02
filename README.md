@@ -3,7 +3,7 @@
 Welcome to **Gmart** – an online shopping platform that delivers a complete and seamless e-commerce experience. From product browsing to order management, this project simulates a fully functional online store with an intuitive interface.
 
 <div align="center">
- <img width="60%" src="https://github.com/user-attachments/assets/187ee773-e25e-41c8-9fea-aa610bf8b03f" />
+ <img width="60%" src="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772480465/Screenshot_2026-03-02_224020_g7mvuq.png" />
 </div>
 
 ---
