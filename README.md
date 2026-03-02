@@ -249,7 +249,7 @@ This project is also part of **Hacktoberfest 2024**. We encourage participants t
 <table> 
     <tr> 
         <td align="center">
-            <a href="https://github.com/MinavKaria/"><img src="https://avatars.githubusercontent.com/u/119132631?v=4" width=150px height=150px /></a>
+            <a href="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772154086/Screenshot_2026-02-27_020142_ncxj8r.png" width=150px height=150px /></a>
             <h4>Minav</h4>
         </td> 
     </tr> 
