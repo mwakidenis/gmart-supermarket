@@ -62,11 +62,16 @@ function BuyCard({ bogo, mrp, discountPrice, imageUrl, productName, discount, id
                 userSelect: 'none',
                 paddingLeft:"8px",
                 
-              }} onClick={() => {
-                if (count >= 1 && count < 10)
-                  setCount(count + 1);
-                addToCart({ id, productName, discountPrice, imageUrl, count: count + 1 });
-              }}>+</span>
+              }}
+              onClick={() => {
+                if (count >= 1) {
+                  setCount(count - 1);
+                  removeFromCart({ id });
+                }
+              }}
+            >
+              -
+            </span>
             <div><input type="text" className=' w-8 bg-green-500 text-white  text-center select-none h-full' value={count} /></div>
             <span
               style={{
@@ -76,11 +81,13 @@ function BuyCard({ bogo, mrp, discountPrice, imageUrl, productName, discount, id
                 paddingRight:"8px",
               }}
               onClick={() => {
-                if (count >= 1) {
-                  setCount(count - 1);
-                  removeFromCart({ id });
-                }
-              }}> - </span>
+                if (count >= 1 && count < 10)
+                  setCount(count + 1);
+                addToCart({ id, productName, discountPrice, imageUrl, count: count + 1 });
+              }}
+            >
+              +
+            </span>
           </div>
         )}
       </div>

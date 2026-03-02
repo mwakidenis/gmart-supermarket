@@ -86,11 +86,16 @@ function ProductPage() {
                 cursor: 'pointer',
                 marginTop: '1px',
                 userSelect: 'none'
-              }} onClick={() => {
-                if (count >= 1 && count < 10)
-                  setCount(count + 1);
-                addToCart({ id, productName: products.productName, discountPrice: products.discountPrice, imageUrl: products.imageUrl, count: count + 1});
-              }}>+</span>
+              }}
+              onClick={() => {
+                if (count >= 1) {
+                  setCount(count - 1);
+                  removeFromCart({ id });
+                }
+              }}
+            >
+              -
+            </span>
             <div><input type="text" className='w-6 border-2 indent-1' value={count} /></div>
             <span
               style={{
@@ -99,11 +104,13 @@ function ProductPage() {
                 userSelect: 'none'
               }}
               onClick={() => {
-                if (count >= 1) {
-                  setCount(count - 1);
-                  removeFromCart({ id });
-                }
-              }}> - </span>
+                if (count >= 1 && count < 10)
+                  setCount(count + 1);
+                addToCart({ id, productName: products.productName, discountPrice: products.discountPrice, imageUrl: products.imageUrl, count: count + 1});
+              }}
+            >
+              +
+            </span>
           </div>
         )}
               {/* <span>
