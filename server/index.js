@@ -194,6 +194,71 @@ app.get("/product/:id", async (req, res) => {
   }
 });
 
+app.post("/product/:id/rating", async (req, res) => {
+  try {
+    const { rating, userId } = req.body;
+    const numericRating = Number(rating);
+
+    if (!Number.isFinite(numericRating) || numericRating < 1 || numericRating > 5) {
+      return res.status(400).json({
+        success: false,
+        message: "Rating must be a number between 1 and 5",
+      });
+    }
+
+    const product = await Product.findOne({ id: req.params.id });
+    if (!product) {
+      return res.status(404).json({
+        success: false,
+        message: "Product not found",
+      });
+    }
+
+    if (!Array.isArray(product.ratings)) {
+      product.ratings = [];
+    }
+
+    if (userId) {
+      const existingRatingIndex = product.ratings.findIndex(
+        (item) => item.userId && item.userId === userId
+      );
+
+      if (existingRatingIndex >= 0) {
+        product.ratings[existingRatingIndex].rating = numericRating;
+      } else {
+        product.ratings.push({ userId, rating: numericRating });
+      }
+    } else {
+      product.ratings.push({ rating: numericRating });
+    }
+
+    const totalRatings = product.ratings.length;
+    const totalScore = product.ratings.reduce((sum, item) => sum + Number(item.rating || 0), 0);
+    const averageRating = totalRatings > 0 ? Number((totalScore / totalRatings).toFixed(1)) : 0;
+
+    product.totalRatings = totalRatings;
+    product.averageRating = averageRating;
+
+    await product.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Rating submitted successfully",
+      data: {
+        id: product.id,
+        averageRating: product.averageRating,
+        totalRatings: product.totalRatings,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+    });
+  }
+});
+
 app.put("/updateFeedback/:id", async (req, res) => {
   console.log(req.body);
   try {

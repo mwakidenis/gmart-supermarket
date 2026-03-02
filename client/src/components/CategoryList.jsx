@@ -48,6 +48,8 @@ function CategoryList() {
               discountPrice={card.discountPrice}
               bogo={card.bogo}
               imageUrl={card.imageUrl}
+              averageRating={card.averageRating}
+              totalRatings={card.totalRatings}
             />
           ))}
           {filteredCardData.length === 0 && <h2>No products found</h2>}

@@ -35,6 +35,8 @@ function VendorProducts() {
             discountPrice={card.discountPrice}
             bogo={card.bogo}
             imageUrl={card.imageUrl}
+            averageRating={card.averageRating}
+            totalRatings={card.totalRatings}
             vendorSide={true}
           />
         ))}

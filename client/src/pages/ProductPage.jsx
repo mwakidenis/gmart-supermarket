@@ -14,6 +14,9 @@ function ProductPage() {
   const { id } = useParams();
   const [products, setProducts] = useState({});
   const { addToCart, removeFromCart, cartItems } = useCart();
+  const [selectedRating, setSelectedRating] = useState(0);
+  const [ratingLoading, setRatingLoading] = useState(false);
+  const [ratingMessage, setRatingMessage] = useState("");
   // console.log(id);
   // // const data=JSON.parse()
   // console.log(productsData);
@@ -21,6 +24,7 @@ function ProductPage() {
   //   productsData;
   // };
   const [count, setCount] = useState(0);
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
 
   useEffect(() => {
     async function getimgURL() {
@@ -45,6 +49,31 @@ function ProductPage() {
     
       
   }, [cartItems, id]);
+
+  const submitRating = async () => {
+    if (!selectedRating) {
+      setRatingMessage("Please select a star rating first.");
+      return;
+    }
+
+    setRatingLoading(true);
+    setRatingMessage("");
+    try {
+      await axios.post(`https://gmart.vercel.app/product/${id}/rating`, {
+        rating: selectedRating,
+        userId: user?._id || user?.uid || null,
+      });
+
+      const response = await axios.get(`https://gmart.vercel.app/product/${id}`);
+      setProducts(response.data);
+      setRatingMessage("Thanks! Your rating has been submitted.");
+    } catch (error) {
+      console.error(error);
+      setRatingMessage("Unable to submit rating right now.");
+    } finally {
+      setRatingLoading(false);
+    }
+  };
   
   return (
     <>
@@ -63,6 +92,39 @@ function ProductPage() {
                 <span className="text-[2.5vh]">
                   {formatKshFromInr(products.discountPrice)} <span className="text-[2vh] font-[100] line-through">{formatKshFromInr(products.mrp)}</span>
                 </span>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span className="font-semibold">Rating</span>
+                <div className="text-yellow-500 text-xl leading-none">
+                  {"★".repeat(Math.round(products.averageRating || 0))}
+                  <span className="text-gray-300">{"☆".repeat(5 - Math.round(products.averageRating || 0))}</span>
+                  <span className="text-sm text-gray-600 ml-2">
+                    {products.averageRating ? `${products.averageRating}/5` : "No ratings yet"} ({products.totalRatings || 0})
+                  </span>
+                </div>
+                <div className="flex items-center gap-1 mt-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <button
+                      key={star}
+                      type="button"
+                      className={`text-2xl ${star <= selectedRating ? "text-yellow-500" : "text-gray-300"}`}
+                      onClick={() => setSelectedRating(star)}
+                    >
+                      ★
+                    </button>
+                  ))}
+                  <button
+                    type="button"
+                    className="ml-2 px-3 py-1 bg-green-600 text-white rounded-md text-sm disabled:opacity-50"
+                    onClick={submitRating}
+                    disabled={ratingLoading}
+                  >
+                    {ratingLoading ? "Submitting..." : "Rate"}
+                  </button>
+                </div>
+                {ratingMessage && (
+                  <span className="text-sm text-gray-700">{ratingMessage}</span>
+                )}
               </div>
               {(count === 0 && (
               <div className=' mr-2' onClick={() => {

@@ -3,7 +3,7 @@ import { useCart } from '../actions/CartControl';
 import { useNavigate } from 'react-router-dom';
 import { formatKshFromInr } from '../utils/currency';
 
-function BuyCard({ bogo, mrp, discountPrice, imageUrl, productName, discount, id, cart, setCart, setTotal, total, vendorSide }) {
+function BuyCard({ bogo, mrp, discountPrice, imageUrl, productName, discount, id, averageRating = 0, totalRatings = 0, cart, setCart, setTotal, total, vendorSide }) {
   const [count, setCount] = useState(0);
   const { addToCart, removeFromCart, cartItems } = useCart();
   const navigate = useNavigate();
@@ -26,6 +26,11 @@ function BuyCard({ bogo, mrp, discountPrice, imageUrl, productName, discount, id
         <span className="flex-grow cursor-pointer hover:underline" onClick={() => {
         navigate(`/product/${id}`)
       }}>{productName}</span>
+        <div className="text-sm text-yellow-500 mt-1">
+          {"★".repeat(Math.round(averageRating || 0))}
+          <span className="text-gray-400">{"☆".repeat(5 - Math.round(averageRating || 0))}</span>
+          <span className="text-gray-600 ml-2 text-xs">({totalRatings || 0})</span>
+        </div>
         <span style={{
           color: '#54B22C'
         }}>{bogo && '(Buy 1 Get 1 FREE)'}</span>
