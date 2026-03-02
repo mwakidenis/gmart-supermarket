@@ -49,7 +49,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="hidden md:flex flex-col space-y-6">
+          <div className="flex flex-col space-y-6">
             <h3 className="text-green-600 font-bold text-lg">Contact Us</h3>
             
             <div className="space-y-4">
@@ -80,11 +80,11 @@ const Footer = () => {
                   </div>
                   <span className="text-gray-600">Our Location (Nairobi, Kenya)</span>
                 </div>
-                <div className="rounded-lg overflow-hidden shadow-lg">
+                <div className="rounded-lg overflow-hidden shadow-lg w-full">
                   <iframe
                     title="Embedded Google Map"
                     src="https://www.google.com/maps?q=Nairobi,Kenya&output=embed"
-                    className="w-full h-48"
+                    className="w-full h-40 sm:h-44 md:h-48"
                     style={{ border: 0 }}
                     allowFullScreen=""
                     loading="lazy"
