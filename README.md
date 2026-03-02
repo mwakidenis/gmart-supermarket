@@ -248,8 +248,7 @@ This project is also part of **Hacktoberfest 2026**. We encourage participants t
 <table align="center">
   <tr>
     <td align="center">
-      <a href="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772154086/Screenshot_2026-02-27_020142_ncxj8r.png">
-        <img src="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772154086/Screenshot_2026-02-27_020142_ncxj8r.png" width="150" height="250" />
+        <img src="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772276752/IMG_20251220_111730_cqlgfo.jpg" width="750" height="200" />
       </a>
       <h4>mwakidenis</h4>
     </td>
