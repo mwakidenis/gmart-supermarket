@@ -177,23 +177,6 @@ Use Docker Compose (Note: Docker should be installed)
    node server.js
    ```
 
-### 🐍 Running py_server Files
-
-Ensure you have the following installed:
-
-- [Python](https://www.python.org/) (version 3.x)
-- [Flask](https://flask.palletsprojects.com/) (for creating the web server)
-- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/) (for enabling CORS)
-- [PyMongo](https://pymongo.readthedocs.io/en/stable/) (for MongoDB integration)
-
-**Start the Backend Server:**  
- Launch the backend server:
-
-```bash
-python backend.py
-
-```
-
 ## Folder Structure 📂
 
 ```
