@@ -58,7 +58,7 @@ Our **Objective** is to create a user-friendly and responsive online shopping pl
 
 ## 🚀 Getting Started
 
-Follow these steps to set up and run the **Ratna Supermarket** project on your local machine:
+Follow these steps to set up and run the **G Mart Supermarket** project on your local machine:
 
 ### Prerequisites
 
@@ -70,7 +70,7 @@ Ensure that the following software is installed on your system:
 
 ## 📦 Installation
 
-To set up the **Ratna Supermarket** project on your local machine, follow these detailed instructions for both the frontend and backend.
+To set up the **G Mart Supermarket** project on your local machine, follow these detailed instructions for both the frontend and backend.
 
 ### Run With Docker
 
@@ -112,20 +112,20 @@ Use Docker Compose (Note: Docker should be installed)
 ### 🔧 Frontend Setup
 
 1. **Fork the Repository:**  
-   Go to the [Ratna Supermarket GitHub repository](https://github.com/MinavKaria/Ratna-Supermarket) and click the "Fork" button in the top-right corner to create your own copy.
+   Go to the [G Mart Supermarket GitHub repository](https://github.com/mwakidenis/gmart-supermarke) and click the "Fork" button in the top-right corner to create your own copy.
 
 2. **Clone the Repository:**  
    Clone your forked repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/Ratna-Supermarket.git
+   git clone https://github.com/yourusername/GMart-Supermarket.git
    ```
 
 3. **Navigate to the Project Directory:**  
    Change your directory to the cloned project folder:
 
    ```bash
-   cd Ratna-Supermarket
+   cd GMart-Supermarket
    cd client
    ```
 
