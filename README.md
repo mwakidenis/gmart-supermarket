@@ -249,7 +249,7 @@ This project is also part of **Hacktoberfest 2026**. We encourage participants t
   <tr>
     <td align="center">
       <a href="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772154086/Screenshot_2026-02-27_020142_ncxj8r.png">
-        <img src="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772154086/Screenshot_2026-02-27_020142_ncxj8r.png" width="150" height="150" />
+        <img src="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772154086/Screenshot_2026-02-27_020142_ncxj8r.png" width="150" height="250" />
       </a>
       <h4>mwakidenis</h4>
     </td>
@@ -259,7 +259,5 @@ This project is also part of **Hacktoberfest 2026**. We encourage participants t
 <div><h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Contributors</h2></div>
 
 We extend our heartfelt gratitude for your invaluable contribution to our project! Your efforts play a pivotal role in elevating Ratna-Supermarket to greater heights.
-
-<a href="https://github.com/MinavKaria/Ratna-Supermarket/graphs/contributors"> <img align="center" src="https://contrib.rocks/image?max=100&repo=MinavKaria/Ratna-Supermarket"/> </a>
 
 <p align="right"><a href="#top"><img src="https://img.shields.io/badge/Move%20to%20top-Blue?style=plastic" alt="Back To Top"></a></p>
