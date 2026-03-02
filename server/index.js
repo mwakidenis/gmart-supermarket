@@ -18,10 +18,14 @@ dotenv.config({
 });
 app.use(fileUpload());
 
+const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS
+  ? process.env.CORS_ALLOWED_ORIGINS.split(",").map((origin) => origin.trim())
+  : "*";
+
 app.use(
   cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT"],
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: [
       "Content-Type",
       "Authorization",
@@ -33,7 +37,7 @@ app.use(
 );
 
 app.use(bodyParser.json());
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 try {
   mongoose.connect(process.env.MONGO_URI);
@@ -44,6 +48,13 @@ try {
 
 app.get("/", (req, res) => {
   res.send("Hello to GMart API");
+});
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "GMart backend is running",
+  });
 });
 
 app.post("/orderItems", async (req, res) => {
@@ -317,6 +328,10 @@ app.get("/all-feedback", async (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-  console.log(`Server running on port: http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port: http://localhost:${PORT}`);
+  });
+}
+
+export default app;
