@@ -22,7 +22,7 @@ Welcome to **Gmart** – an online shopping platform that delivers a complete an
 
 ## ✨ Project Overview
 
-**Ratna Supermarket** is designed to provide users with a real-world shopping experience. It includes essential features such as product listings, cart management, user authentication, and order processing. Developed as part of a college project, it showcases a fully-fledged e-commerce platform using modern web development tools.
+**G Mart Supermarket** is designed to provide users with a real-world shopping experience. It includes essential features such as product listings, cart management, user authentication, and order processing. Developed as part of a college project, it showcases a fully-fledged e-commerce platform using modern web development tools.
 
 Our **Objective** is to create a user-friendly and responsive online shopping platform that allows customers to explore, add products to their cart, and place orders effortlessly.
 
@@ -30,7 +30,7 @@ Our **Objective** is to create a user-friendly and responsive online shopping pl
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="700">
 <center>
 
-# 🌐 **Live Demo:** [Gmart](https://gmart.minavkaria.xyz/)
+# 🌐 **Live Demo:** [Gmart]()
 
 </center>
 <p align="center"> 
@@ -232,11 +232,11 @@ For more details, refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## 🤝 Open Source Programs
 
-This project is part of **GirlScript Summer of Code 2024** (GSSoC) Extended, an initiative to help aspiring developers get involved in the open-source community.
+This project is part of **GirlScript Summer of Code 2026** (GSSoC) Extended, an initiative to help aspiring developers get involved in the open-source community.
 <br>
 <img src="https://github.com/user-attachments/assets/f7abbbe7-1950-4bf9-8456-c812ca630acf" style="width:400px">
 
-This project is also part of **Hacktoberfest 2024**. We encourage participants to contribute and improve the project during this event. Let’s make open source accessible and fun for everyone!
+This project is also part of **Hacktoberfest 2026**. We encourage participants to contribute and improve the project during this event. Let’s make open source accessible and fun for everyone!
 
 <br>
 <img src="https://hacktoberfest.com/_next/static/media/logo-hacktoberfest-11--green.dd2bc4ca.svg" style="width:400px">
@@ -250,7 +250,7 @@ This project is also part of **Hacktoberfest 2024**. We encourage participants t
     <tr> 
         <td align="center">
             <a href="https://res.cloudinary.com/dqv8dlj2s/image/upload/v1772154086/Screenshot_2026-02-27_020142_ncxj8r.png" width=150px height=150px /></a>
-            <h4>Minav</h4>
+            <h4>mwakidenis</h4>
         </td> 
     </tr> 
 </table> 
