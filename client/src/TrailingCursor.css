@@ -1,0 +1,39 @@
+/* TrailingCursor.css */
+body {
+  cursor: none; /* Hide the default cursor */
+}
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(1, 255, 77, 0.7);
+  pointer-events: none;
+  transition: background 0.3s ease;
+  z-index: 9999;
+}
+
+.small-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(15, 218, 130);
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.7;
+  z-index: 9999;
+}
+
+.button:hover .cursor {
+  background: rgba(255, 215, 0, 0.8); /* Change to a gold-like color on button hover */
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button:active .cursor {
+  transform: scale(1.2); /* Scale effect on click */
+}

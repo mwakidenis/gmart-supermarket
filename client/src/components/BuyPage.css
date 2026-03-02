@@ -1,0 +1,39 @@
+.grid-box
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap:5rem;
+}
+@media screen and (max-width:1500px)
+{
+    .grid-box
+    {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+}
+@media screen and (max-width:1300px)
+{
+    .grid-box
+    {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+}
+
+@media screen and (max-width:900px)
+{
+    .grid-box
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:700px)
+{
+    .grid-box
+    {
+        grid-template-columns: 1fr;
+    }
+    
+}

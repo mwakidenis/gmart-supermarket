@@ -1,0 +1,70 @@
+
+name: "gmart"
+version: 'v1.0'
+services:
+  mongodb:
+    image: mongo:latest 
+    ports:
+      - ${MONGODBPORT}:27017
+    volumes:
+      - ./mongo_data:/data/db
+    networks:
+      - gmartnetwork
+  
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - ${MONGOEXPPORT}:8081
+    depends_on:
+      - mongodb
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongodb:27017/
+      ME_CONFIG_BASICAUTH: false
+    networks:
+      - gmartnetwork
+  
+  server:
+    build: ./server
+    container_name: server
+    ports:
+      - ${SERVERPORT}:3000
+    depends_on:
+      - mongodb
+    develop:
+      watch:
+        - action: sync
+          path: ./server
+          target: /app/server
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./server/package.json
+    networks:
+      - gmartnetwork
+    
+  client:
+    build: ./client
+    container_name: client
+    ports:
+      - ${CLIENTPORT}:5173
+    depends_on:
+      - mongodb
+    develop:
+      watch:
+        - action: sync
+          path: ./client
+          target: /app/client
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./client/package.json
+    networks:
+      - gmartnetwork
+
+
+
+networks:
+  gmartnetwork:
+    driver: bridge
+

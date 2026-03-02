@@ -1,0 +1,18 @@
+.autoplay-video {
+    width: 600px; /* Set the width of the video */
+    display: block; /* Ensure the video is visible */
+    margin: auto; /* Center the video horizontally */
+  }
+  
+  .autoplay-video::-webkit-media-controls {
+    display: none; /* Hide the default browser controls for WebKit browsers */
+  }
+  
+  .autoplay-video::-webkit-media-controls-enclosure {
+    display: none; /* Hide the default browser controls for WebKit browsers */
+  }
+  
+  .autoplay-video::-webkit-media-controls-panel {
+    display: none; /* Hide the default browser controls for WebKit browsers */
+  }
+  

@@ -1,0 +1,41 @@
+.vendor- {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.vendor-heading {
+  text-align: center;
+}
+
+.vendor-table- {
+  overflow-x: auto;
+}
+
+.vendor-orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vendor-orders-table th,
+.vendor-orders-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.vendor-products-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vendor-products-table th,
+.vendor-products-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.vendor-product-image {
+  width: 50px;
+  height: 50px;
+}
