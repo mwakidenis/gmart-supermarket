@@ -43,7 +43,7 @@ try {
 }
 
 app.get("/", (req, res) => {
-  res.send("Hello to Ratna Supermarket API");
+  res.send("Hello to GMart API");
 });
 
 app.post("/orderItems", async (req, res) => {
