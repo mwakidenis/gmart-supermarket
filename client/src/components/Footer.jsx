@@ -107,7 +107,6 @@ const Footer = () => {
               <img 
                 src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg" 
                 alt="Payment methods" 
-                className="h-8 w-auto sm:h-10 md:h-12"
               />
             </div>
           </div>

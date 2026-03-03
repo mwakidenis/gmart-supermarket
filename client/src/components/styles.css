@@ -36,9 +36,10 @@
 }
 
 .payment img {
-  max-width: 200px;
-  height: auto;
-  min-height: 32px;
+  width: 240px;
+  height: 48px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 @media (max-width: 640px) {
@@ -48,6 +49,14 @@
   }
   
   .payment img {
-    max-width: 180px;
+    width: 200px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .payment img {
+    width: 280px;
+    height: 56px;
   }
 }
