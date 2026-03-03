@@ -16,7 +16,7 @@ export default function BasicRating() {
 
   const sendFeedback = async () => {
     try {
-      const response = await axios.put(`https://gmart.vercel.app/updateFeedback/${id}`, {
+      const response = await axios.put(`https://gmart-supermarket.vercel.app/updateFeedback/${id}`, {
         rating: value,
         feedback: feedback,
       });

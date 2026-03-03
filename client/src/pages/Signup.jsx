@@ -101,7 +101,7 @@ function Signup() {
     
     console.log(user);
     try{
-      const response=await axios.post('https://gmart.vercel.app/signUp', user)
+      const response=await axios.post('https://gmart-supermarket.vercel.app/signUp', user)
       console.log(response.result);
       toast.success('Signup successful!');
     }
@@ -123,7 +123,7 @@ function Signup() {
     try {
       
       console.log("user");
-    const response=await axios.post('https://gmart.vercel.app/signIn', {email:user.email, password:user.password})
+    const response=await axios.post('https://gmart-supermarket.vercel.app/signIn', {email:user.email, password:user.password})
     console.log(response);
     const data=response.data;
     const name=data.result.name;

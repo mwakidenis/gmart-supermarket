@@ -40,7 +40,7 @@ const Navbar = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://gmart.vercel.app/allProducts"
+          "https://gmart-supermarket.vercel.app/allProducts"
         );
         console.log(response.data);
         setData(response.data);

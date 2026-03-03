@@ -15,7 +15,7 @@ function Orders() {
                 const user = JSON.parse(localStorage.getItem('user'));
                 const userID = user.uid;
 
-                const response = await axios.get(`https://gmart.vercel.app/allOrder/${userID}`, {
+                const response = await axios.get(`https://gmart-supermarket.vercel.app/allOrder/${userID}`, {
                     headers: {
                         'Access-Control-Allow-Origin': '*',
                         'Access-Control-Allow-Methods': 'GET',

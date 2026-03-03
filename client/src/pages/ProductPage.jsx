@@ -30,7 +30,7 @@ function ProductPage() {
     async function getimgURL() {
       try
       {
-        const response= await axios.get(`https://gmart.vercel.app/product/${id}`);
+        const response= await axios.get(`https://gmart-supermarket.vercel.app/product/${id}`);
         console.log(response.data);
         setProducts(response.data);
       }
@@ -59,12 +59,12 @@ function ProductPage() {
     setRatingLoading(true);
     setRatingMessage("");
     try {
-      await axios.post(`https://gmart.vercel.app/product/${id}/rating`, {
+      await axios.post(`https://gmart-supermarket.vercel.app/product/${id}/rating`, {
         rating: selectedRating,
         userId: user?._id || user?.uid || null,
       });
 
-      const response = await axios.get(`https://gmart.vercel.app/product/${id}`);
+      const response = await axios.get(`https://gmart-supermarket.vercel.app/product/${id}`);
       setProducts(response.data);
       setRatingMessage("Thanks! Your rating has been submitted.");
     } catch (error) {

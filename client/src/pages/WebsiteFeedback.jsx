@@ -41,7 +41,15 @@ export default function FeedbackForm() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("https://gmart.vercel.app/feedback", data);
+      const response = await axios.post(
+        "https://gmart-supermarket.vercel.app/submit-feedback",
+        {
+          name: data.name,
+          email: data.email,
+          rating: data.rating,
+          feedback: data.feedbackText,
+        }
+      );
       console.log("Feedback submitted successfully:", response.data);
       toast.success("Feedback submitted successfully!");
       reset();

@@ -30,7 +30,11 @@ Our **Objective** is to create a user-friendly and responsive online shopping pl
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="700">
 <center>
 
-# 🌐 **Live Demo:** [Gmart]()
+# 🌐 **Live Links**
+
+- **Frontend:** [https://gmart.vercel.app](https://gmart.vercel.app)
+- **Backend API:** [https://gmart-supermarket.vercel.app](https://gmart-supermarket.vercel.app)
+- **Backend Health Check:** [https://gmart-supermarket.vercel.app/health](https://gmart-supermarket.vercel.app/health)
 
 </center>
 <p align="center"> 
@@ -52,7 +56,7 @@ Our **Objective** is to create a user-friendly and responsive online shopping pl
 - **Frontend:** React.js, Tailwind CSS
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
-- **Hosting:** Firebase
+- **Hosting:** Vercel (frontend + backend)
 
 ---
 
@@ -167,28 +171,44 @@ Use Docker Compose (Note: Docker should be installed)
 
    ```env
    MONGO_URI=<your-mongodb-connection-string>
-   DB_NAME=<your-database-name>
+   DB_NAME=gmart
+   PORT=5000
+   JWT_SECRET=<your-jwt-secret>
+   CORS_ALLOWED_ORIGINS=<your-frontend-domain>
    ```
 
 4. **Start the Backend Server:**  
    Launch the backend server:
 
    ```bash
-   node server.js
+   node index.js
+   ```
+
+5. **Quick API Check:**
+
+   ```bash
+   curl http://localhost:5000/health
+   ```
+
+   Expected response:
+
+   ```json
+   {"success":true,"message":"GMart backend is running"}
    ```
 
 ## Folder Structure 📂
 
 ```
-Ratna-Supermarket/
+gmart/
 ├── client/ # React frontend application
 │   ├── src/ # React components and files
 │   ├── public/ # Public static files
 │   ├── package.json # Frontend dependencies
 │   └── vite.config.js # Vite configuration file
 ├── server/ # Backend Node.js application
-│   ├── server.js # Main server file
+│   ├── index.js # Main server file
 │   ├── .env # Environment configuration (not included in repo)
+│   ├── vercel.json # Vercel backend routing config
 │   ├── package.json # Backend dependencies
 │   └── ... # Other backend files
 ├── README.md # This file

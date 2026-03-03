@@ -10,7 +10,7 @@ function VendorOrders() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('https://gmart.vercel.app/allVendor');
+        const response = await axios.get('https://gmart-supermarket.vercel.app/allVendor');
         setOrders(response.data);
       } catch (error) {
         console.log(error);
@@ -22,7 +22,7 @@ function VendorOrders() {
 
   const handleDispatch = async (orderId) => {
     try {
-      const response = await axios.put(`https://gmart.vercel.app/updateStage/${orderId}`, { orderStage: 2});
+      const response = await axios.put(`https://gmart-supermarket.vercel.app/updateStage/${orderId}`, { orderStage: 2});
       console.log(response);
   
     } catch (error) {
@@ -92,7 +92,7 @@ function VendorOrders() {
                   )}
                   {order.orderStage === 2 && (
                     <button className='vendor-btn bg-green-600 p-4 text-white rounded-lg' onClick={()=>{
-                      axios.put(`https://gmart.vercel.app/updateStage/${order._id}`, { orderStage: 3});
+                      axios.put(`https://gmart-supermarket.vercel.app/updateStage/${order._id}`, { orderStage: 3});
                       setOrders(orders.map((item) => {
                         if(item._id === order._id){
                           return {...item, orderStage: 3}
@@ -103,7 +103,7 @@ function VendorOrders() {
                     )}
                   {order.orderStage === 3 && (
                     <button className='vendor-btn bg-green-600 p-4 text-white rounded-lg' onClick={()=>{
-                      axios.put(`https://gmart.vercel.app/updateStage/${order._id}`, { orderStage: 4});
+                      axios.put(`https://gmart-supermarket.vercel.app/updateStage/${order._id}`, { orderStage: 4});
                       setOrders(orders.map((item) => {
                         if(item._id === order._id){
                           return {...item, orderStage: 4}

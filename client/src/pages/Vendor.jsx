@@ -57,7 +57,7 @@ function Vendor() {
         return;
       }
       else {
-        await axios.post("https://gmart.vercel.app/addProduct", productData);
+        await axios.post("https://gmart-supermarket.vercel.app/addProduct", productData);
       setProductData({
         productName: "",
         mrp: "",

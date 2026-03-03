@@ -33,7 +33,7 @@ function Checkout() {
       console.log("Pincode: ",pincode);
       console.log("Delivery Type: ",deliveryType);
       await axios.post(
-        "https://gmart.vercel.app/orderItems",
+        "https://gmart-supermarket.vercel.app/orderItems",
         {
           id: userID,
           order: cartItems,

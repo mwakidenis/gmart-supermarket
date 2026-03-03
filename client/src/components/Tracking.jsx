@@ -28,7 +28,7 @@ const steps = [
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://gmart.vercel.app/order/${orderID}`, { headers: { 'Access-Control-Allow-Origin': '*' } });
+        const response = await axios.get(`https://gmart-supermarket.vercel.app/order/${orderID}`, { headers: { 'Access-Control-Allow-Origin': '*' } });
           const order = response.data;
           console.log(order.orderStage);
           setActiveStep(order.orderStage);

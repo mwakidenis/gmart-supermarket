@@ -9,7 +9,7 @@ function VendorProducts() {
     // Fetch data from JSON file
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://gmart.vercel.app/allProducts");
+        const response = await axios.get("https://gmart-supermarket.vercel.app/allProducts");
         console.log(response.data);
         setProductsData(response.data);
       } catch (error) {
