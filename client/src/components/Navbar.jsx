@@ -90,7 +90,7 @@ const Navbar = () => {
     setStartFlag,
   } = useCart();
   const [open, setOpen] = useState(
-    startflag === 0 && !localStorage.getItem("userPincode") ? true : false
+    sessionStorage.getItem("locationPromptShown") !== "true"
   );
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
@@ -114,6 +114,7 @@ const Navbar = () => {
 
   const handleClose = (value) => {
     setOpen(false);
+    sessionStorage.setItem("locationPromptShown", "true");
 
     if (startflag === 0) {
       handleClickOpen2();

@@ -4,90 +4,96 @@ import mongoose from "mongoose";
 
 
 const userSchema = mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true },
+    name: { type: String, required: true, trim: true },
+    email: { type: String, required: true, unique: true, lowercase: true, trim: true },
     id: { type: String },
     password: { type: String, required: true }
-})
+}, { timestamps: true })
 
 const User = mongoose.model('user', userSchema);
 
+const buildAuthPayload = (userDoc) => ({
+    uid: userDoc._id.toString(),
+    _id: userDoc._id,
+    name: userDoc.name,
+    email: userDoc.email,
+});
+
+const buildToken = (userDoc) => {
+    const secretKey = process.env.JWT_SECRET || "gmart_fallback_secret";
+    return jwt.sign(
+        { email: userDoc.email, uid: userDoc._id.toString(), name: userDoc.name },
+        secretKey,
+        { expiresIn: "7d" }
+    );
+};
+
 export const createNewUser = async (req, res) => {
-    const { email, password, confirmPassword, firstName, lastname } = req.body;
-    console.log(req.body);
+    const { email, password, confirmPassword, firstName, lastname } = req.body || {};
+    const normalizedEmail = (email || "").trim().toLowerCase();
+    const normalizedFirstName = (firstName || "").trim();
+    const normalizedLastName = (lastname || "").trim();
+
+    if (!normalizedEmail || !password || !confirmPassword || !normalizedFirstName || !normalizedLastName) {
+        return res.status(400).json({ message: "All required fields must be provided" });
+    }
+
+    if (password.length < 6) {
+        return res.status(400).json({ message: "Password must be at least 6 characters long" });
+    }
+
+    if (password !== confirmPassword) {
+        return res.status(400).json({ message: "Passwords don't match" });
+    }
+
     try {
-        console.log("Test 1");
-        const existingUser = await User.findOne({ email });
-        console.log(existingUser);
-        console.log("Test 2");
+        const existingUser = await User.findOne({ email: normalizedEmail });
         if (existingUser) {
-            console.log("Test 3");
             return res.status(400).json({ message: "User already exists" });
         }
-        else {
-            console.log("Test 3");
-            console.log("Test 4 111");
-            if (password !== confirmPassword) {
-                return res.status(400).json({ message: "Passwords don't match" });
-            }
 
-            try {
-                console.log("Test 4");
+        const hashedPassword = await argon2.hash(password);
+        const newUser = new User({
+            email: normalizedEmail,
+            password: hashedPassword,
+            name: `${normalizedFirstName} ${normalizedLastName}`,
+        });
 
-                const hashedPassword = await argon2.hash(password);
+        await newUser.save();
+        const token = buildToken(newUser);
 
-                console.log(hashedPassword);
-
-                console.log("Test 5");
-
-                const newUser = new User({ email, password: hashedPassword, name: `${firstName} ${lastname}` });
-
-                await newUser.save();
-
-
-
-                const secretKey = process.env.JWT_SECRET;
-                var token = jwt.sign({ email: newUser.email, uid: newUser._id, name: `${firstName} ${lastname}` }, secretKey, { expiresIn: "1h" });
-
-                res.status(200).json({ result: newUser, token });
-            }
-            catch (err) {
-                console.log(err);
-            }
-
-            console.log("Test 6 - Success");
-        }
-
-
+        return res.status(201).json({ result: buildAuthPayload(newUser), token });
     }
     catch (err) {
+        console.log(err);
         res.status(500).json({ message: "Something went wrong" });
     }
 }
 
 export const signInUser = async (req, res) => {
-    const { email, password } = req.body;
-    console.log(req.body);
-    try {
-        console.log("Test 1");
-        const existingUser = await User.findOne({ email });
-        if (!existingUser) {
-            return res.status(400).json({ message: "User doesn't exist" });
-        }
-        else {
-            const isPasswordCorrect = await argon2.verify(existingUser.password, password);
-            if (!isPasswordCorrect) {
-                return res.status(400).json({ message: "Invalid Credentials" });
-            }
-            else {
-                const secretKey = process.env.JWT_SECRET;
-                var token = jwt.sign({ email: existingUser.email, uid: existingUser._id, name: existingUser.name }, secretKey, { expiresIn: "1h" });
+    const { email, password } = req.body || {};
+    const normalizedEmail = (email || "").trim().toLowerCase();
 
-                res.status(200).json({ result: existingUser, token });
-            }
+    if (!normalizedEmail || !password) {
+        return res.status(400).json({ message: "Email and password are required" });
+    }
+
+    try {
+        const existingUser = await User.findOne({ email: normalizedEmail });
+        if (!existingUser) {
+            return res.status(401).json({ message: "Invalid credentials" });
         }
+
+        const isPasswordCorrect = await argon2.verify(existingUser.password, password);
+        if (!isPasswordCorrect) {
+            return res.status(401).json({ message: "Invalid credentials" });
+        }
+
+        const token = buildToken(existingUser);
+        return res.status(200).json({ result: buildAuthPayload(existingUser), token });
     }
     catch (err) {
         console.log(err);
+        return res.status(500).json({ message: "Something went wrong" });
     }
 }

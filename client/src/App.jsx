@@ -7,6 +7,7 @@ import { CartProvider } from './actions/CartControl';
 import { Toaster } from 'react-hot-toast';
 import BackToTop from './components/BackToTop.jsx';
 import TrailingCursor from './TrailingCursor'; // Import TrailingCursor component
+import AndroidInstallPrompt from './components/AndroidInstallPrompt.jsx';
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
         <CartProvider>
           <RouterProvider router={router}/>
         </CartProvider>
+        <AndroidInstallPrompt />
         <BackToTop/>
         <TrailingCursor /> {/* Add trailing cursor animation */}
       </GoogleOAuthProvider>

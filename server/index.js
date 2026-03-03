@@ -39,12 +39,16 @@ app.use(
 app.use(bodyParser.json());
 const PORT = process.env.PORT || 3000;
 
-try {
-  mongoose.connect(process.env.MONGO_URI);
-  console.log("MongoDB connected successfully");
-} catch (error) {
-  console.error("Error in connecting to MongoDB:", error);
-}
+mongoose
+  .connect(process.env.MONGO_URI, {
+    dbName: process.env.DB_NAME || "gmart",
+  })
+  .then(() => {
+    console.log("MongoDB connected successfully");
+  })
+  .catch((error) => {
+    console.error("Error in connecting to MongoDB:", error);
+  });
 
 app.get("/", (req, res) => {
   res.send("Hello to GMart API");

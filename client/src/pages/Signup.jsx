@@ -102,8 +102,13 @@ function Signup() {
     console.log(user);
     try{
       const response=await axios.post('https://gmart-supermarket.vercel.app/signUp', user)
-      console.log(response.result);
+      const data = response.data;
+      localStorage.setItem('user', JSON.stringify(data.result));
+      localStorage.setItem('token', data.token);
+      setIsLogin(true);
+      setName(data.result.name);
       toast.success('Signup successful!');
+      navigate('/');
     }
     catch(err)
     {
@@ -111,9 +116,7 @@ function Signup() {
       console.log(err);
     }
     finally{
-      console.log("User created");
-      
-      navigate('/');
+      console.log("Signup request completed");
     }
 
     
@@ -129,8 +132,9 @@ function Signup() {
     const name=data.result.name;
     const token=data.token;
     setIsLogin(true);
-    setName(user.name);
+    setName(name);
     localStorage.setItem('user', JSON.stringify(data.result));
+    localStorage.setItem('token', token);
     toast.success('Login successful!');
     navigate('/');
     } catch (error) {
