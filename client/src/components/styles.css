@@ -16,12 +16,14 @@
 }
 
 .footer-bottom {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  overflow-x: auto;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 2rem !important;
+  overflow: visible !important;
+  width: 100% !important;
+  max-width: none !important;
 }
 
 .copyright {

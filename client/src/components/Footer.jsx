@@ -100,13 +100,24 @@ const Footer = () => {
 
       {/* Copyright Bar */}
       <div className="border-t border-gray-200">
-        <div className="w-full mx-auto px-2 py-6">
-          <div className="footer-bottom">
+        <div className="w-full mx-auto px-2 py-6" style={{maxWidth: 'none', overflow: 'visible'}}>
+          <div className="footer-bottom" style={{overflow: 'visible', width: '100%'}}>
             <div className="copyright">© {new Date().getFullYear()} mwakidev. All rights reserved</div>
-            <div className="payment">
+            <div className="payment" style={{overflow: 'visible', flexShrink: 0}}>
               <img 
                 src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg" 
                 alt="Payment methods" 
+                style={{
+                  width: '450px',
+                  height: '90px',
+                  minWidth: '450px',
+                  minHeight: '90px',
+                  maxWidth: 'none',
+                  maxHeight: 'none',
+                  objectFit: 'contain',
+                  display: 'block',
+                  flexShrink: 0
+                }}
               />
             </div>
           </div>
