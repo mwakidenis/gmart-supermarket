@@ -38,10 +38,10 @@
 }
 
 .payment img {
-  width: 2250px !important;
-  height: 450px !important;
-  min-width: 1500px !important;
-  min-height: 300px !important;
+  width: 400px !important;
+  height: 80px !important;
+  min-width: 250px !important;
+  min-height: 50px !important;
   object-fit: contain;
   display: block;
 }
@@ -53,18 +53,18 @@
   }
   
   .payment img {
-    width: 1876px !important;
-    height: 376px !important;
-    min-width: 1350px !important;
-    min-height: 270px !important;
+    width: 320px !important;
+    height: 64px !important;
+    min-width: 200px !important;
+    min-height: 40px !important;
   }
 }
 
 @media (min-width: 768px) {
   .payment img {
-    width: 2626px !important;
-    height: 526px !important;
-    min-width: 1650px !important;
-    min-height: 330px !important;
+    width: 480px !important;
+    height: 96px !important;
+    min-width: 300px !important;
+    min-height: 60px !important;
   }
 }
