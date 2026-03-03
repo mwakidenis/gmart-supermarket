@@ -32,7 +32,7 @@ Our **Objective** is to create a user-friendly and responsive online shopping pl
 
 # 🌐 **Live Links**
 
-- **Frontend:** [https://gmart-mu.vercel.app/](https://gmart-mu.vercel.app)
+- **Frontend:** [https://gmart-mu.vercel.app](https://gmart-mu.vercel.app)
 - **Backend API:** [https://gmart-supermarket.vercel.app](https://gmart-supermarket.vercel.app)
 - **Backend Health Check:** [https://gmart-supermarket.vercel.app/health](https://gmart-supermarket.vercel.app/health)
 
