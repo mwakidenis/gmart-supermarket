@@ -21,6 +21,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  overflow-x: auto;
 }
 
 .copyright {
@@ -33,14 +34,16 @@
   flex: 0 0 auto;
   display: flex;
   align-items: center;
+  overflow: visible;
 }
 
 .payment img {
-  width: 1200px;
-  height: 240px;
-  min-width: 300px;
-  min-height: 60px;
+  width: 800px !important;
+  height: 160px !important;
+  min-width: 400px !important;
+  min-height: 80px !important;
   object-fit: contain;
+  display: block;
 }
 
 @media (max-width: 640px) {
@@ -50,18 +53,18 @@
   }
   
   .payment img {
-    width: 1000px;
-    height: 200px;
-    min-width: 280px;
-    min-height: 56px;
+    width: 600px !important;
+    height: 120px !important;
+    min-width: 300px !important;
+    min-height: 60px !important;
   }
 }
 
 @media (min-width: 768px) {
   .payment img {
-    width: 1400px;
-    height: 280px;
-    min-width: 350px;
-    min-height: 70px;
+    width: 1000px !important;
+    height: 200px !important;
+    min-width: 500px !important;
+    min-height: 100px !important;
   }
 }
