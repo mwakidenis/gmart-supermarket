@@ -151,7 +151,7 @@ const Navbar = () => {
         <div className="md:flex items-center  w-full lg:p-4 justify-between gap-0 relative sm:block">
           <div className="flex items-center p-0 gap-2 justify-between w-full">
             <div
-              className="text-white text-2xl font-bold mb-4 md:mb-0 cursor-pointer  sm:w-auto md:w-0 lg:w-fit sm:flex sm:justify-center sm:items-center"
+              className="text-white text-2xl font-bold mb-4 md:mb-0 cursor-pointer sm:w-auto md:w-0 lg:w-fit flex items-center justify-start"
               onClick={() => {
                 navigate("/");
               }}
@@ -159,7 +159,7 @@ const Navbar = () => {
               <img
                 src="/logo.svg"
                 alt=""
-                className="md:w-[0] lg:w-[150px]  sm:w-[100px] "
+                className="w-[100px] md:w-[0] lg:w-[150px]"
               />
             </div>
             <div className="md:flex gap-2 md:gap-1 md:justify-center md:scale-90 lg:scale-100  md:items-center md:w-fit sm:hidden">
