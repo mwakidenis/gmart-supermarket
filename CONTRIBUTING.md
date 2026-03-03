@@ -1,6 +1,6 @@
-# Contributing to Ratna Supermarket
+# Contributing to GMart Supermarket
 
-We welcome all contributions to **Ratna Supermarket**! Whether it's bug reports, feature requests, or code contributions, we appreciate your efforts in helping us improve the project.
+We welcome all contributions to **GMart Supermarket**! Whether it's bug reports, feature requests, or code contributions, we appreciate your efforts in helping us improve the project.
 
 ## How to Contribute
 
@@ -11,7 +11,7 @@ We welcome all contributions to **Ratna Supermarket**! Whether it's bug reports,
    - Clone your forked repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/Ratna-Supermarket.git
+   git clone https://github.com/yourusername/gmart-supermarket.git
    ```
 
 3. **Create a Branch**

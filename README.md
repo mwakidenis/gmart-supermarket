@@ -9,13 +9,13 @@ Welcome to **Gmart** – an online shopping platform that delivers a complete an
 ---
 
 <p align="center">
-    <a href="https://github.com/MinavKaria/Ratna-Supermarket"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" alt="Open Source"></a>
-    <a href="https://github.com/MinavKaria/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103" alt="Maintained"></a>
-    <a href="https://github.com/MinavKaria/Ratna-Supermarket/blob/main/LICENSE"><img src="https://img.shields.io/badge/MIT-Licence-blue.svg?v=103" alt="MIT License"></a>  
-    <a href="https://github.com/MinavKaria/Ratna-Supermarket/graphs/contributors"><img src="https://img.shields.io/github/contributors/MinavKaria/Ratna-Supermarket?color=brightgreen" alt="Contributors"></a>
-    <a href="https://github.com/MinavKaria/Ratna-Supermarket/stargazers"><img src="https://img.shields.io/github/stars/MinavKaria/Ratna-Supermarket?color=0059b3" alt="GitHub Stars"></a>
-    <a href="https://github.com/MinavKaria/Ratna-Supermarket/network/members"><img src="https://img.shields.io/github/forks/MinavKaria/Ratna-Supermarket?color=yellow" alt="GitHub Forks"></a>
-    <a href="https://github.com/MinavKaria/Ratna-Supermarket/issues"><img src="https://img.shields.io/github/issues/MinavKaria/Ratna-Supermarket?color=0059b3" alt="GitHub Issues"></a>
+   <a href="https://github.com/mwakidenis/gmart-supermarket"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" alt="Open Source"></a>
+   <a href="https://github.com/mwakidenis/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103" alt="Maintained"></a>
+   <a href="https://github.com/mwakidenis/gmart-supermarket/blob/main/LICENSE"><img src="https://img.shields.io/badge/MIT-Licence-blue.svg?v=103" alt="MIT License"></a>  
+   <a href="https://github.com/mwakidenis/gmart-supermarket/graphs/contributors"><img src="https://img.shields.io/github/contributors/mwakidenis/gmart-supermarket?color=brightgreen" alt="Contributors"></a>
+   <a href="https://github.com/mwakidenis/gmart-supermarket/stargazers"><img src="https://img.shields.io/github/stars/mwakidenis/gmart-supermarket?color=0059b3" alt="GitHub Stars"></a>
+   <a href="https://github.com/mwakidenis/gmart-supermarket/network/members"><img src="https://img.shields.io/github/forks/mwakidenis/gmart-supermarket?color=yellow" alt="GitHub Forks"></a>
+   <a href="https://github.com/mwakidenis/gmart-supermarket/issues"><img src="https://img.shields.io/github/issues/mwakidenis/gmart-supermarket?color=0059b3" alt="GitHub Issues"></a>
 </p>
 
 ---

@@ -33,7 +33,7 @@ const ChatbotHelp = () => {
                   {
                     text:
                       inputMessage +
-                      "You are Ratna Supermarket's customer support bot. Help the users in any way possible, add no formatting in your responses & keep it short.",
+                      "You are GMart Supermarket's customer support bot. Help the users in any way possible, add no formatting in your responses & keep it short.",
                   },
                 ],
               },
