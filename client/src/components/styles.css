@@ -1,4 +1,4 @@
-/* .css */
+/* Footer Styles */
 
 .font-poppins::after {
   content: "";
@@ -13,4 +13,41 @@
   background-color: #1abd82;
   border-radius: 5px;
   font: "Poppins", sans-serif;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  color: #6b7280;
+  font-size: 0.875rem;
+  flex: 0 0 auto;
+}
+
+.payment {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.payment img {
+  max-width: 200px;
+  height: auto;
+  min-height: 32px;
+}
+
+@media (max-width: 640px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .payment img {
+    max-width: 180px;
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -100,16 +101,13 @@ const Footer = () => {
       {/* Copyright Bar */}
       <div className="border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-500">
-              &copy; {currentYear} All rights reserved.
-            </p>
-            <div className="payment w-full md:w-auto flex justify-center md:justify-end">
-              <img
-                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg"
-                alt="Payment methods"
-                className="max-w-[260px] sm:max-w-[320px] w-full h-auto"
-                loading="lazy"
+          <div className="footer-bottom">
+            <div className="copyright">© {new Date().getFullYear()} mwakidev. All rights reserved</div>
+            <div className="payment">
+              <img 
+                src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg" 
+                alt="Payment methods" 
+                className="h-8 w-auto sm:h-10 md:h-12"
               />
             </div>
           </div>
