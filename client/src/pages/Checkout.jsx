@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../actions/CartControl";
 import axios from "axios";
 import { formatKshFromInr } from "../utils/currency";
+import { toast } from "react-hot-toast";
 
 function Checkout() {
   const navigate = useNavigate();
@@ -71,6 +72,24 @@ function Checkout() {
           {!paymentSuccess && (
             <>
               <h1>Total Amount: {formatKshFromInr(totalAmount)}</h1>
+              <div className="bg-gray-50 rounded-md p-3 border border-gray-200">
+                <h2 className="font-semibold mb-2">Order Summary</h2>
+                <div className="max-h-40 overflow-y-auto text-sm space-y-1">
+                  {cartItems.map((item) => (
+                    <div key={item.id} className="flex justify-between items-start gap-2">
+                      <div className="flex-1">
+                        <p className="font-medium">{item.productName}</p>
+                        <p className="text-gray-500">{item.count} × {formatKshFromInr(item.discountPrice)}</p>
+                      </div>
+                      <p className="font-medium">{formatKshFromInr(item.discountPrice * item.count)}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-2 pt-2 border-t border-gray-300 flex justify-between font-semibold">
+                  <span>Total</span>
+                  <span>{formatKshFromInr(totalAmount)}</span>
+                </div>
+              </div>
               {/* Input field for the address */}
               
               <Payment />
