@@ -22,7 +22,7 @@ Welcome to **Gmart** – an online shopping platform that delivers a complete an
 
 ## ✨ Project Overview
 
-**G Mart Supermarket** is designed to provide users with a real-world shopping experience. It includes essential features such as product listings, cart management, user authentication, and order processing. Developed as part of a college project, it showcases a fully-fledged e-commerce platform using modern web development tools.
+**G Mart Supermarket** is designed to provide users with a real-world shopping experience. It includes essential features such as product listings, cart management, user authentication, and order processing. Developed as part of my campus project, it showcases a fully-fledged e-commerce platform using modern web development tools.
 
 **Objective** is to create a user-friendly and responsive online shopping platform that allows customers to explore, add products to their cart, and place orders effortlessly.
 
