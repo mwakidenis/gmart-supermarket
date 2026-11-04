@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
+import logx from "@mwakidenis/logx";
 import Order from "./cartOrderSchema.js";
 import fileUpload from "express-fileupload";
 import { createNewUser, signInUser } from "./user.js";
@@ -44,10 +45,10 @@ mongoose
     dbName: process.env.DB_NAME || "gmart",
   })
   .then(() => {
-    console.log("MongoDB connected successfully");
+    logx.info("MongoDB connected successfully");
   })
   .catch((error) => {
-    console.error("Error in connecting to MongoDB:", error);
+    logx.error("Error in connecting to MongoDB:", error);
   });
 
 app.get("/", (req, res) => {
@@ -62,7 +63,7 @@ app.get("/health", (req, res) => {
 });
 
 app.post("/orderItems", async (req, res) => {
-  console.log(req.body);
+  logx.info(req.body);
   const newOrder = new Order({
     id: req.body.id,
     order: req.body.order,
@@ -81,7 +82,7 @@ app.post("/orderItems", async (req, res) => {
 
     res.send("Order received successfully");
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -91,24 +92,24 @@ app.get("/allVendor", async (req, res) => {
     const orders = await Order.find();
     res.send(orders);
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
 
 app.get("/allOrder/:id", async (req, res) => {
-  console.log("allOrder");
+  logx.info("allOrder");
   try {
     const orders = await Order.find({ id: req.params.id });
     res.send(orders);
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
 
 app.put("/updateStage/:id", async (req, res) => {
-  console.log(req.body);
+  logx.info(req.body);
   try {
     const order = await Order.findOne({ _id: req.params.id });
     if (!order) {
@@ -118,7 +119,7 @@ app.put("/updateStage/:id", async (req, res) => {
     await order.save();
     res.status(200).send("Order stage updated successfully");
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -131,7 +132,7 @@ app.get("/order/:id", async (req, res) => {
     }
     res.send(order);
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -148,7 +149,7 @@ app.post("/uploadImage", (req, res) => {
   //appliction and will retrun err if any error found if no error found then return pathname of file.
   file.mv(`${dirname} ${UFileName}`, (err) => {
     if (err) {
-      console.error(err);
+      logx.error(err);
       return res.status(500).send(err);
     }
     res.json({ fileName: UFileName, filePath: `/${UFileName}` });
@@ -166,7 +167,7 @@ app.get("/allProducts", async (req, res) => {
       res.status(404).send("Product not found");
     }
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -174,7 +175,7 @@ app.get("/allProducts", async (req, res) => {
 app.post("/addProduct", async (req, res) => {
   try {
     // Add your code here to handle the order request
-    console.log(req.body);
+    logx.info(req.body);
 
     const newProduct = new Product({
       _id: new mongoose.Types.ObjectId(),
@@ -188,10 +189,10 @@ app.post("/addProduct", async (req, res) => {
     });
 
     await newProduct.save();
-    console.log("Product added successfully");
+    logx.info("Product added successfully");
     res.send("Product added successfully");
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -204,7 +205,7 @@ app.get("/product/:id", async (req, res) => {
     }
     res.send(order);
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -266,7 +267,7 @@ app.post("/product/:id/rating", async (req, res) => {
       },
     });
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).json({
       success: false,
       message: "Internal Server Error",
@@ -275,7 +276,7 @@ app.post("/product/:id/rating", async (req, res) => {
 });
 
 app.put("/updateFeedback/:id", async (req, res) => {
-  console.log(req.body);
+  logx.info(req.body);
   try {
     const order = await Order.findOne({ _id: req.params.id });
     if (!order) {
@@ -286,13 +287,13 @@ app.put("/updateFeedback/:id", async (req, res) => {
     await order.save();
     res.status(200).send("Order stage updated successfully");
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
 
 app.post("/submit-feedback", async (req, res) => {
-  console.log(req.body);
+  logx.info(req.body);
   try {
     const feedback = await Feedback.create({
       name: req.body.name,
@@ -307,7 +308,7 @@ app.post("/submit-feedback", async (req, res) => {
       data: feedback,
     })
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).json({
       success: false,
       message: "Internal Server Error",
@@ -323,7 +324,7 @@ app.get("/all-feedback", async (req, res) => {
       data: feedback,
     });
   } catch (error) {
-    console.error(error);
+    logx.error(error);
     res.status(500).json({
       success: false,
       message: "Internal Server Error",
@@ -334,7 +335,7 @@ app.get("/all-feedback", async (req, res) => {
 
 if (!process.env.VERCEL) {
   app.listen(PORT, () => {
-    console.log(`Server running on port: http://localhost:${PORT}`);
+    logx.info(`Server running on port: http://localhost:${PORT}`);
   });
 }
 
