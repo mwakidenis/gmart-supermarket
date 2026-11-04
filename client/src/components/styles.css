@@ -1,0 +1,72 @@
+/* Footer Styles */
+
+.font-poppins::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  top: 100%;
+  width: 90%;
+  height: 4px;
+  background-color: #1abd82;
+  border-radius: 5px;
+  font: "Poppins", sans-serif;
+}
+
+.footer-bottom {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 2rem !important;
+  overflow: visible !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.copyright {
+  color: #6b7280;
+  font-size: 0.875rem;
+  flex: 0 0 auto;
+}
+
+.payment {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+.payment img {
+  width: 450px !important;
+  height: 90px !important;
+  min-width: 338px !important;
+  min-height: 68px !important;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .payment img {
+    width: 360px !important;
+    height: 72px !important;
+    min-width: 270px !important;
+    min-height: 54px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .payment img {
+    width: 540px !important;
+    height: 108px !important;
+    min-width: 405px !important;
+    min-height: 81px !important;
+  }
+}

@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "productName": "Hybrid Tomato 500g",
+    "mrp": "20",
+    "bogo": true,
+    "discountPrice": "10",
+    "category": "vegetable",
+    "imageUrl": "/tomato.png"
+  },
+  {
+    "id": 2,
+    "productName": "Potato 1Kg",
+    "mrp": "40",
+    "discountPrice": "30",
+    "bogo": false,
+    "category": "vegetable",
+    "imageUrl": "/potato.png"
+  },
+  {
+    "id": 3,
+    "productName": "Onion 1Kg",
+    "mrp": "60",
+    "bogo": true,
+    "discountPrice": "40",
+    "category": "vegetable",
+    "imageUrl": "/onion.png"
+  },
+  {
+    "id": 4,
+    "productName": "Green chillies 100g",
+    "mrp": "20",
+    "bogo": true,
+    "category": "vegetable",
+    "discountPrice": "15",
+    "imageUrl": "/green_chilli.png"
+  },
+  {
+    "id": 5,
+    "productName": "Lady Finger 250g",
+    "mrp": "50",
+    "discountPrice": "30",
+    "bogo": false,
+    "category": "vegetable",
+    "imageUrl": "/lady_finger.png"
+  },
+  {
+    "id": 6,
+    "productName": "Mr. Makhana Himalayan Salt & Pepper",
+    "mrp": "70",
+    "bogo": true,
+    "category": "snacks & munchies",
+    "discountPrice": "50",
+    "imageUrl": "/salt.png"
+  },
+  {
+    "id": 7,
+    "productName": "Lijjat Papad Urad Papad",
+    "mrp": "90",
+    "bogo": true,
+    "category": "snacks & munchies",
+    "discountPrice": "70",
+    "imageUrl": "/lijjat.png"
+  },
+  {
+    "id": 8,
+    "productName": "Kurkure Masala Munch Crisps X3",
+    "mrp": "60",
+    "bogo": true,
+    "category": "snacks & munchies",
+    "discountPrice": "50",
+    "imageUrl": "/kurkure.png"
+  },
+  {
+    "id": 9,
+    "productName": "Dorritos Cheese Nachos",
+    "mrp": "150",
+    "bogo": true,
+    "category": "snacks & munchies",
+    "discountPrice": "100",
+    "imageUrl": "/doritos.png"
+  },
+  {
+    "id": 10,
+    "productName": "Chheda's Maharaja Delight Gift Pack",
+    "mrp": "400",
+    "bogo": true,
+    "category": "snacks & munchies",
+    "discountPrice": "350",
+    "imageUrl": "/gift_back.png"
+  },
+  {
+    "id": 11,
+    "productName": "Maaza Mango Drink 1.2l",
+    "mrp": "60",
+    "bogo": true,
+    "category": "cold drinks & juices",
+    "discountPrice": "40",
+    "imageUrl": "/maaza.png"
+  },
+  {
+    "id": 12,
+    "productName": "B-Natural Mixed Fruit",
+    "mrp": "70",
+    "bogo": true,
+    "category": "cold drinks & juices",
+    "discountPrice": "50",
+    "imageUrl": "/juice.svg"
+  },
+  {
+    "id": 13,
+    "productName": "Storia 100% Tender Coconut Water ",
+    "mrp": "70",
+    "bogo": true,
+    "category": "cold drinks & juices",
+    "discountPrice": "50",
+    "imageUrl": "/storia.png"
+  },
+  {
+    "id": 14,
+    "productName": "Bisleri Packaged Water 5l",
+    "mrp": "120",
+    "bogo": true,
+    "category": "cold drinks & juices",
+    "discountPrice": "90",
+    "imageUrl": "/bisleri_5l.png"
+  },
+  {
+    "id": 15,
+    "productName": "Sting Energy drink Pack of 2",
+    "mrp": "50",
+    "bogo": true,
+    "category": "cold drinks & juices",
+    "discountPrice": "40",
+    "imageUrl": "/sting.png"
+  },
+  {
+    "id": 16,
+    "productName": "Eggs 1 dozen",
+    "mrp": "60",
+    "category": "egg, meat & fish",
+    "discountPrice": "40",
+    "imageUrl": "/eggs.png"
+  },
+  {
+    "id": 17,
+    "productName": "Chicken 1 kg",
+    "mrp": "200",
+    "category": "egg, meat & fish",
+    "discountPrice": "150",
+    "imageUrl": "/chicken.png"
+  },
+  {
+    "id": 18,
+    "productName": "Fish  ",
+    "mrp": "100",
+    "category": "egg, meat & fish",
+    "discountPrice": "70",
+    "imageUrl": "/fish.png"
+  },
+  {
+    "id": 19,
+    "productName": "Mutton",
+    "mrp": "400",
+    "category": "egg, meat & fish",
+    "discountPrice": "300",
+    "imageUrl": "/mutton.png"
+  },
+  {
+    "id": 20,
+    "productName": "Beef ",
+    "mrp": "80",
+    "category": "egg, meat & fish",
+    "discountPrice": "60",
+    "imageUrl": "/beef.png"
+  },
+  {
+    "productName": "Dove Shampoo",
+    "mrp": "300",
+    "discountPrice": "250",
+    "imageUrl": "/dove_shampoo.png",
+    "category": "bath & body"
+  },
+  {
+    "productName": "Cinthol Soap",
+    "mrp": "150",
+    "discountPrice": "100",
+    "imageUrl": "/cinthol.png",
+    "category": "bath & body"
+  }  
+
+]

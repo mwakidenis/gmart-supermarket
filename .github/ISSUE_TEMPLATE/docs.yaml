@@ -1,0 +1,29 @@
+name: " 📄RatnaSupermarket-Docs"
+description: "Improve Documentation"
+title: "Topic:"
+labels: 
+  - "Ratna Supermarket Documentation"
+body:
+  - type: textarea
+    attributes:
+      label: "Describe the types of topics you'd add in our Website"
+      description: "Describe in 30 words or more."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Could you share some screenshots or a video of your previous work?"
+      description: "It would be great to know what areas you'd like to contribute to"
+    validations:
+      required: false
+
+  - type: checkboxes
+    attributes:
+      label: "Record"
+      options:
+        - label: "I agree to follow this project's Code of Conduct"
+          required: true
+        - label: "I'm a GSSOC-24-extd contributor"
+        - label: "Soon, I'll complete it and create a Pull Request."
+        - label: "I have read other issues and did not find a similar or same issue. Ensuring that, this is a new issue"

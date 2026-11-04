@@ -1,0 +1,124 @@
+[
+    {
+      "productName": "Tomato",
+      "mrp": "200",
+      "discountPrice": "150",
+      "bogo": true,
+      "category": "vegetable"
+    },
+    {
+      "productName": "Apple",
+      "mrp": "250",
+      "discountPrice": "200",
+      "category": "fruit"
+    },
+    {
+      "productName": "Spinach",
+      "mrp": "180",
+      "discountPrice": "140",
+      "category": "vegetable"
+    },
+    {
+      "productName": "Banana",
+      "mrp": "150",
+      "discountPrice": "120",
+      "category": "fruit"
+    },
+    {
+      "productName": "Broccoli",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "vegetable"
+    },
+    {
+      "productName": "Orange",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "fruit"
+    },
+    {
+      "productName": "Carrot",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "vegetable"
+    },
+    {
+      "productName": "Grapes",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "fruit"
+    },
+    {
+      "productName": "Chicken Breast",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "egg, meat & fish"
+    },
+    {
+      "productName": "Salmon Fillet",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "egg, meat & fish"
+    },
+    {
+      "productName": "Shampoo",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "bath & body"
+    },
+    {
+      "productName": "Orange Juice",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "cold drinks & juices"
+    },
+    {
+      "productName": "Potato Chips",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "snacks & munchies"
+    },
+    {
+      "productName": "Apple Juice",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "cold drinks & juices"
+    },
+    {
+      "productName": "Ice Cream",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "icy delights"
+    },
+    {
+      "productName": "Body Wash",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "bath & body"
+    },
+    {
+      "productName": "Popcorn",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "snacks & munchies"
+    },
+    {
+      "productName": "Popsicle",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "icy delights"
+    },
+    {
+      "productName": "Bath Bombs",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "bath & body"
+    },
+    {
+      "productName": "Chocolate Bar",
+      "mrp": "300",
+      "discountPrice": "250",
+      "category": "snacks & munchies"
+    }
+  ]
+  
